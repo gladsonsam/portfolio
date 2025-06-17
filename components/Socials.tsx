@@ -28,7 +28,7 @@ export const socialData: SocialData[] = [
 
 const Socials: React.FC = () => {
   return (
-    <div className="flex items-center gap-x-5 text-lg">
+    <div className="flex items-center gap-x-5 text-2xl">
       {socialData.map((social, i) => (
         <Link
           key={i}

@@ -4,11 +4,9 @@ import CountUp from "react-countup";
 import type { NextPage } from "next";
 import type { IconType } from "react-icons";
 import {
-  FaCss3,
   FaGitAlt,
   FaHtml5,
   FaJs,
-  FaNodeJs,
   FaPython,
   FaReact,
 } from "react-icons/fa";
@@ -47,12 +45,10 @@ export const aboutData: AboutDataItem[] = [
         title: "Web Development",
         icons: [
           FaHtml5,
-          FaCss3,
           FaJs,
           SiTypescript,
           FaReact,
           SiNextdotjs,
-          FaNodeJs,
           SiTailwindcss,
         ],
       } as SkillInfo,
@@ -103,6 +99,10 @@ export const aboutData: AboutDataItem[] = [
         title: "Computer Science",
         stage: "Current - Double Degree",
       },
+      {
+        title: "Harrisdale Senior High School",
+        stage: "Graduated - ATAR 96.15",
+      },
     ],
   },
 ];
@@ -111,7 +111,7 @@ const About: NextPage = () => {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
+    <div className="h-full bg-primary/30 pt-24 pb-32 sm:py-32 text-center xl:text-left">
       <Circles />
 
       {/* avatar img */}
@@ -125,7 +125,7 @@ const About: NextPage = () => {
         <Avatar />
       </motion.div>
 
-      <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
+      <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6 px-4 sm:px-0">
         {/* text */}
         <div className="flex-1 flex flex-col justify-center">
           <motion.h2
@@ -135,8 +135,8 @@ const About: NextPage = () => {
             exit="hidden"
             className="h2"
           >
-            Captivating <span className="text-accent">stories</span> birth
-            magnificent designs.
+            Building the <span className="text-accent">future</span> through
+            engineering and code.
           </motion.h2>
           <motion.p
             variants={fadeIn("right", 0.4)}
@@ -144,9 +144,7 @@ const About: NextPage = () => {
             animate="show"
             className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
           >
-            10 years ago, I begin freelancing as a developer. Since then, I&apos;ve
-            done remote work for agencies, consulted for startups, and
-            collabrated on digital products for business and consumer use.
+            I am a passionate student pursuing a double degree in Mechatronic Engineering Honours and Computer Science in Perth, Western Australia. My journey combines the precision of engineering with the creativity of software development, focusing on robotics, automation, and full-stack web development.
           </motion.p>
 
           {/* counters */}
@@ -160,7 +158,7 @@ const About: NextPage = () => {
               {/* experience */}
               <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={2} duration={5} />
+                  <CountUp start={0} end={3} duration={5} />
                 </div>
                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
                   Active Projects.
@@ -180,7 +178,7 @@ const About: NextPage = () => {
               {/* projects */}
               <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={3} duration={5} />
+                  <CountUp start={0} end={1} duration={5} />
                 </div>
                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
                   Years studying.

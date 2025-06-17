@@ -26,10 +26,10 @@
     @apply w-full h-screen overflow-hidden;
   }
   .h1 {
-    @apply text-[32px] leading-tight md:text-[48px] md:leading-[1.2] mb-6 font-medium;
+    @apply text-[24px] leading-tight sm:text-[28px] md:text-[36px] lg:text-[42px] xl:text-[48px] md:leading-[1.2] mb-4 sm:mb-6 font-medium;
   }
   .h2 {
-    @apply text-[28px] leading-tight md:text-[40px] md:leading-[1.2] mb-4 font-medium;
+    @apply text-[22px] leading-tight sm:text-[28px] md:text-[40px] md:leading-[1.2] mb-3 sm:mb-4 font-medium;
   }
   p {
     @apply leading-[1.8] text-white/70 font-normal;
@@ -54,5 +54,15 @@
 @layer utilities {
   .bg-site {
     background: transparent;
+  }
+  
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }

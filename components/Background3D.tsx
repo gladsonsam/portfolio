@@ -46,6 +46,23 @@ const ParticleField: React.FC = () => {
 }
 
 const Background3D: React.FC = () => {
+  // Only render 3D background on larger screens
+  const [isMobile, setIsMobile] = React.useState(false);
+  
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
+  if (isMobile) {
+    return null;
+  }
+  
   return (
     <>
       <div className="fixed inset-0 -z-20">

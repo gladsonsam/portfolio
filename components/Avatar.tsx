@@ -3,8 +3,8 @@ import React from "react";
 
 const Avatar: React.FC = () => {
   return (
-    <div className="flex max-w-none pointer-events-none select-none">
-      <div className="relative w-[250px] h-[250px] md:w-[350px] md:h-[350px] xl:w-[400px] xl:h-[400px]">
+    <div className="flex justify-center items-center max-w-none pointer-events-none select-none">
+      <div className="relative w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[350px] md:h-[350px] xl:w-[400px] xl:h-[400px]">
         {/* Subtle glow effect */}
         <div className="absolute inset-0 bg-gradient-to-r from-accent/10 to-accent/20 rounded-full blur-2xl" />
         
