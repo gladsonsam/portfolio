@@ -72,18 +72,10 @@ const modalVariants = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: {
-      duration: 0.3,
-      ease: "easeOut",
-    },
   },
   exit: {
     opacity: 0,
     scale: 0.8,
-    transition: {
-      duration: 0.2,
-      ease: "easeIn",
-    },
   },
 };
 
@@ -93,15 +85,9 @@ const backdropVariants = {
   },
   visible: {
     opacity: 1,
-    transition: {
-      duration: 0.2,
-    },
   },
   exit: {
     opacity: 0,
-    transition: {
-      duration: 0.2,
-    },
   },
 };
 
@@ -198,6 +184,7 @@ const WorkSlider: React.FC = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
+            transition={{ duration: 0.2 }}
             onClick={closeModal}
           >
             <motion.div
@@ -206,6 +193,7 @@ const WorkSlider: React.FC = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
+              transition={{ duration: 0.3, ease: "easeOut" }}
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
