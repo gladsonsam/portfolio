@@ -33,7 +33,7 @@ const Home: NextPage = () => {
                 transition={{ duration: 0.3, delay: 0.1 }}
                 className="max-w-sm lg:max-w-lg xl:max-w-xl mx-auto lg:mx-0 mb-6 sm:mb-8 lg:mb-10 xl:mb-12 text-center lg:text-left text-sm sm:text-base"
               >
-                I am a student pursuing a double degree in Mechatronic Engineering Honours and Computer Science. My passion lies in robotics, automation, and full-stack development. In my free time, I enjoy working on my homelab, experimenting with technologies, and exploring hardware and software integration.
+                Crafting innovative solutions through code and engineering. Currently building the future with modern web technologies and robotics.
               </motion.p>
 
               {/* btn */}
