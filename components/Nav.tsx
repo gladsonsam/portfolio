@@ -34,15 +34,15 @@ const Nav: React.FC = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="flex flex-col items-center xl:justify-center gap-y-4 fixed h-max bottom-4 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:left-auto xl:bottom-auto xl:right-[2%] z-50 xl:top-0 w-[calc(100%-2rem)] max-w-sm sm:max-w-md xl:w-16 xl:max-w-md xl:h-screen">
-      <div className="flex w-full xl:flex-col items-center justify-evenly xl:justify-center gap-x-1 gap-y-10 px-6 sm:px-8 xl:px-0 h-[60px] sm:h-[70px] xl:h-max py-4 sm:py-6 xl:py-8 bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-md border border-white/10 rounded-full xl:rounded-full text-xl sm:text-2xl xl:text-xl shadow-lg relative overflow-hidden">
+    <nav className="flex flex-col items-center xl:justify-center gap-y-4 fixed h-max bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:left-auto xl:bottom-auto xl:right-[2%] z-50 xl:top-0 w-[calc(100%-1rem)] sm:w-[calc(100%-2rem)] max-w-xs sm:max-w-sm md:max-w-md xl:w-16 xl:max-w-md xl:h-screen">
+      <div className="flex w-full xl:flex-col items-center justify-evenly xl:justify-center gap-x-1 gap-y-10 px-4 sm:px-6 md:px-8 xl:px-0 h-[52px] sm:h-[60px] md:h-[70px] xl:h-max py-3 sm:py-4 md:py-6 xl:py-8 bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-md border border-white/10 rounded-full xl:rounded-full text-lg sm:text-xl md:text-2xl xl:text-xl shadow-lg relative overflow-hidden">
         {/* Subtle glow effect */}
         <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-transparent opacity-50 rounded-full pointer-events-none" />
         {navData.map((link, i) => (
           <Link
             className={`${
               link.path === pathname && "text-accent bg-white/10"
-            } relative flex items-center group hover:text-accent transition-all duration-300 p-2 sm:p-3 xl:p-2 rounded-full hover:bg-white/5`}
+            } relative flex items-center group hover:text-accent transition-all duration-300 p-1.5 sm:p-2 md:p-3 xl:p-2 rounded-full hover:bg-white/5`}
             href={link.path}
             key={i}
           >

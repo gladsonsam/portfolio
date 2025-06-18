@@ -28,7 +28,7 @@ export const socialData: SocialData[] = [
 
 const Socials: React.FC = () => {
   return (
-    <div className="flex items-center gap-x-5 text-2xl">
+    <div className="flex items-center gap-x-3 sm:gap-x-5 text-xl sm:text-2xl">
       {socialData.map((social, i) => (
         <Link
           key={i}
@@ -38,7 +38,7 @@ const Socials: React.FC = () => {
           rel="noreferrer noopener"
           className={`${
             social.name === "Github"
-              ? "bg-accent rounded-full p-[5px] hover:text-white"
+              ? "bg-accent rounded-full p-[4px] sm:p-[5px] hover:text-white"
               : "hover:text-accent"
           } transition-all duration-300`}
         >

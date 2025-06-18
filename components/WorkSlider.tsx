@@ -127,7 +127,7 @@ const WorkSlider: React.FC = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 px-2 sm:px-0">
         {projects.map((project) => (
           <div
             className="relative rounded-lg overflow-hidden flex items-center justify-center group cursor-pointer"
@@ -141,7 +141,7 @@ const WorkSlider: React.FC = () => {
                 alt={project.title}
                 width={500}
                 height={300}
-                className="rounded-lg w-full h-[200px] object-cover"
+                className="rounded-lg w-full h-[160px] sm:h-[200px] object-cover"
               />
 
               {/* overlay gradient */}
@@ -151,8 +151,8 @@ const WorkSlider: React.FC = () => {
               />
 
               {/* title */}
-              <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-6 transition-all duration-300">
-                <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2em] text-white">
+              <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-4 sm:group-hover:-translate-y-6 transition-all duration-300">
+                <div className="flex items-center gap-x-2 text-xs sm:text-[13px] tracking-[0.2em] text-white">
                   {/* title part 1 */}
                   <div className="delay-100">VIEW</div>
                   {/* title part 2 */}
@@ -160,15 +160,15 @@ const WorkSlider: React.FC = () => {
                     PROJECT
                   </div>
                   {/* icon */}
-                  <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200">
+                  <div className="text-lg sm:text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200">
                     <BsArrowRight aria-hidden />
                   </div>
                 </div>
               </div>
 
               {/* Project title overlay */}
-              <div className="absolute top-4 left-4 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-lg">
-                <h3 className="text-white font-medium text-sm">{project.title}</h3>
+              <div className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-black/50 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-lg">
+                <h3 className="text-white font-medium text-xs sm:text-sm">{project.title}</h3>
               </div>
             </div>
           </div>
@@ -188,7 +188,7 @@ const WorkSlider: React.FC = () => {
             onClick={closeModal}
           >
             <motion.div
-              className="bg-secondary border border-white/10 rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              className="bg-secondary border border-white/10 rounded-lg max-w-2xl w-full max-h-[90vh] mx-4 overflow-y-auto"
               variants={modalVariants}
               initial="hidden"
               animate="visible"
@@ -197,8 +197,8 @@ const WorkSlider: React.FC = () => {
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
-              <div className="flex items-center justify-between p-6 border-b border-white/10">
-                <h3 className="text-2xl font-bold text-white">{selectedProject.title}</h3>
+              <div className="flex items-center justify-between p-4 sm:p-6 border-b border-white/10">
+                <h3 className="text-lg sm:text-2xl font-bold text-white">{selectedProject.title}</h3>
                 <button
                   onClick={closeModal}
                   className="text-white/60 hover:text-white transition-colors p-1 hover:bg-white/10 rounded-full"
@@ -208,7 +208,7 @@ const WorkSlider: React.FC = () => {
               </div>
 
               {/* Modal Content */}
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 {/* Project Gallery */}
                 <motion.div
                   className="mb-6"
@@ -218,7 +218,7 @@ const WorkSlider: React.FC = () => {
                 >
                   {/* Main Image */}
                   <div className="relative mb-4 overflow-hidden rounded-lg">
-                    <div className="relative h-[250px]">
+                    <div className="relative h-[200px] sm:h-[250px]">
                       <AnimatePresence mode="wait">
                         <motion.div
                           key={currentImageIndex}
@@ -248,24 +248,24 @@ const WorkSlider: React.FC = () => {
                       <>
                         <motion.button
                           onClick={prevImage}
-                          className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors z-10"
+                          className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 sm:p-2 rounded-full transition-colors z-10"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.95 }}
                         >
-                          <BsChevronLeft size={20} />
+                          <BsChevronLeft size={16} className="sm:w-5 sm:h-5" />
                         </motion.button>
                         <motion.button
                           onClick={nextImage}
-                          className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors z-10"
+                          className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 sm:p-2 rounded-full transition-colors z-10"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.95 }}
                         >
-                          <BsChevronRight size={20} />
+                          <BsChevronRight size={16} className="sm:w-5 sm:h-5" />
                         </motion.button>
                         
                         {/* Image counter */}
                         <motion.div
-                          className="absolute bottom-2 right-2 bg-black/50 text-white px-2 py-1 rounded text-sm z-10"
+                          className="absolute bottom-1 sm:bottom-2 right-1 sm:right-2 bg-black/50 text-white px-2 py-1 rounded text-xs sm:text-sm z-10"
                           key={`counter-${currentImageIndex}`}
                           initial={{ opacity: 0, scale: 0.8 }}
                           animate={{ opacity: 1, scale: 1 }}
@@ -308,7 +308,7 @@ const WorkSlider: React.FC = () => {
                             alt={`${selectedProject.title} thumbnail ${index + 1}`}
                             width={80}
                             height={60}
-                            className="w-20 h-15 object-cover"
+                            className="w-16 h-12 sm:w-20 sm:h-15 object-cover"
                           />
                         </motion.button>
                       ))}
@@ -318,28 +318,28 @@ const WorkSlider: React.FC = () => {
 
                 {/* Description */}
                 <motion.div
-                  className="mb-6"
+                  className="mb-4 sm:mb-6"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.3 }}
                 >
-                  <h4 className="text-lg font-semibold text-white mb-3">Description</h4>
-                  <p className="text-white/70 leading-relaxed">{selectedProject.description}</p>
+                  <h4 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">Description</h4>
+                  <p className="text-white/70 leading-relaxed text-sm sm:text-base">{selectedProject.description}</p>
                 </motion.div>
 
                 {/* Tech Stack */}
                 <motion.div
-                  className="mb-6"
+                  className="mb-4 sm:mb-6"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.3 }}
                 >
-                  <h4 className="text-lg font-semibold text-white mb-3">Tech Stack</h4>
+                  <h4 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">Tech Stack</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.techStack.map((tech, index) => (
                       <motion.span
                         key={index}
-                        className="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm"
+                        className="px-2 sm:px-3 py-1 bg-accent/20 text-accent rounded-full text-xs sm:text-sm"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.4 + index * 0.05, duration: 0.2 }}
@@ -352,7 +352,7 @@ const WorkSlider: React.FC = () => {
 
                 {/* Links */}
                 <motion.div
-                  className="flex gap-4"
+                  className="flex flex-col sm:flex-row gap-3 sm:gap-4"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5, duration: 0.3 }}
@@ -362,7 +362,7 @@ const WorkSlider: React.FC = () => {
                       href={selectedProject.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors text-white hover:scale-105 transform duration-200"
+                      className="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors text-white hover:scale-105 transform duration-200 text-sm sm:text-base"
                     >
                       <BsGithub />
                       <span>GitHub</span>
@@ -373,7 +373,7 @@ const WorkSlider: React.FC = () => {
                       href={selectedProject.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-accent/20 hover:bg-accent/30 text-accent rounded-lg transition-colors hover:scale-105 transform duration-200"
+                      className="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 bg-accent/20 hover:bg-accent/30 text-accent rounded-lg transition-colors hover:scale-105 transform duration-200 text-sm sm:text-base"
                     >
                       <BsGlobe />
                       <span>Live Demo</span>

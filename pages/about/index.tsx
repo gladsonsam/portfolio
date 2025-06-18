@@ -111,7 +111,7 @@ const About: NextPage = () => {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="h-full bg-primary/30 pt-24 pb-32 sm:py-32 text-center xl:text-left">
+    <div className="min-h-screen bg-primary/30 pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 text-center xl:text-left overflow-y-auto">
       <Circles />
 
       {/* avatar img */}
@@ -120,20 +120,20 @@ const About: NextPage = () => {
         initial="hidden"
         animate="show"
         exit="hidden"
-        className="hidden xl:flex absolute bottom-0 -left-[370px]"
+        className="hidden xl:flex absolute bottom-0 -left-[370px] z-10"
       >
         <Avatar />
       </motion.div>
 
-      <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6 px-4 sm:px-0">
+      <div className="container mx-auto min-h-screen flex flex-col items-center xl:flex-row gap-x-6 gap-y-8 px-4 sm:px-6 lg:px-8 xl:px-0">
         {/* text */}
-        <div className="flex-1 flex flex-col justify-center">
+        <div className="flex-1 flex flex-col justify-center w-full xl:w-auto">
           <motion.h2
             variants={fadeIn("right", 0.2)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="h2"
+            className="h2 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
           >
             Building the <span className="text-accent">future</span> through
             engineering and code.
@@ -142,7 +142,7 @@ const About: NextPage = () => {
             variants={fadeIn("right", 0.4)}
             initial="hidden"
             animate="show"
-            className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
+            className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 text-sm sm:text-base"
           >
             I am a passionate student pursuing a double degree in Mechatronic Engineering Honours and Computer Science in Perth, Western Australia. My journey combines the precision of engineering with the creativity of software development, focusing on robotics, automation, and full-stack web development.
           </motion.p>
@@ -152,46 +152,46 @@ const About: NextPage = () => {
             variants={fadeIn("right", 0.6)}
             initial="hidden"
             animate="show"
-            className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8"
+            className="flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8 gap-x-2 sm:gap-x-4"
           >
-            <div className="flex flex-1 xl:gap-x-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
               {/* experience */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
+              <div className="text-center md:text-left">
+                <div className="text-xl sm:text-2xl xl:text-4xl font-extrabold text-accent mb-2">
                   <CountUp start={0} end={3} duration={5} />
                 </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Active Projects.
+                <div className="text-xs uppercase tracking-[1px] leading-[1.4]">
+                  Active Projects
                 </div>
               </div>
 
-              {/* clients */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
+              {/* skills */}
+              <div className="text-center md:text-left">
+                <div className="text-xl sm:text-2xl xl:text-4xl font-extrabold text-accent mb-2">
                   <CountUp start={0} end={8} duration={5} />
                 </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Core skills.
+                <div className="text-xs uppercase tracking-[1px] leading-[1.4]">
+                  Core Skills
                 </div>
               </div>
 
-              {/* projects */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
+              {/* years */}
+              <div className="text-center md:text-left">
+                <div className="text-xl sm:text-2xl xl:text-4xl font-extrabold text-accent mb-2">
                   <CountUp start={0} end={1} duration={5} />
                 </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Years studying.
+                <div className="text-xs uppercase tracking-[1px] leading-[1.4]">
+                  Years Studying
                 </div>
               </div>
 
-              {/* awards */}
-              <div className="relative flex-1">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
+              {/* degrees */}
+              <div className="text-center md:text-left">
+                <div className="text-xl sm:text-2xl xl:text-4xl font-extrabold text-accent mb-2">
                   <CountUp start={0} end={2} duration={5} />
                 </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Degrees pursuing.
+                <div className="text-xs uppercase tracking-[1px] leading-[1.4]">
+                  Degrees Pursuing
                 </div>
               </div>
             </div>
@@ -204,16 +204,16 @@ const About: NextPage = () => {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="flex flex-col w-full xl:max-w-[48%] h-[480px]"
+          className="flex flex-col w-full xl:max-w-[48%] min-h-[400px] max-h-[600px] xl:h-auto"
         >
-          <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
+          <div className="flex gap-x-2 sm:gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4 flex-wrap justify-center xl:justify-start">
             {aboutData.map((item, itemI) => (
               <div
                 key={itemI}
                 className={`${
                   index === itemI &&
                   "text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300"
-                } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0`}
+                } cursor-pointer capitalize text-sm sm:text-base xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0 px-2 py-1`}
                 onClick={() => setIndex(itemI)}
               >
                 {item.title}
@@ -221,21 +221,21 @@ const About: NextPage = () => {
             ))}
           </div>
 
-          <div className="py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start">
+          <div className="py-2 xl:py-6 flex flex-col gap-y-3 xl:gap-y-4 items-center xl:items-start overflow-y-auto max-h-[400px] xl:max-h-none px-2">
             {aboutData[index].info.map((item, itemI) => (
               <div
                 key={itemI}
-                className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-center text-white/60"
+                className="flex flex-col sm:flex-row w-full max-w-full gap-x-2 gap-y-2 items-center sm:items-start text-center sm:text-left text-white/60"
               >
                 {/* title */}
-                <div className="font-light mb-2 md:mb-0">{item.title}</div>
-                <div className="hidden md:flex">-</div>
-                <div>{'stage' in item && item.stage}</div>
+                <div className="font-light text-sm sm:text-base flex-shrink-0">{item.title}</div>
+                <div className="hidden sm:flex">-</div>
+                <div className="text-sm sm:text-base flex-grow">{'stage' in item && item.stage}</div>
 
-                <div className="flex gap-x-4">
+                <div className="flex gap-x-2 sm:gap-x-4 justify-center sm:justify-start flex-shrink-0">
                   {/* icons */}
                   {'icons' in item && item.icons?.map((Icon, iconI) => (
-                    <div key={iconI} className="text-2xl text-white">
+                    <div key={iconI} className="text-xl sm:text-2xl text-white">
                       <Icon />
                     </div>
                   ))}

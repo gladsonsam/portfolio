@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Stars } from '@react-three/drei';
+import { Stars } from '@react-three/drei';
 import { useRef, Suspense } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
@@ -18,8 +18,9 @@ const ParticleField: React.FC = () => {
   
   useFrame((state) => {
     if (points.current) {
-      points.current.rotation.x = state.clock.elapsedTime * 0.02;
-      points.current.rotation.y = state.clock.elapsedTime * 0.03;
+      points.current.rotation.x = state.clock.elapsedTime * 0.01;
+      points.current.rotation.y = state.clock.elapsedTime * 0.015;
+      points.current.rotation.z = state.clock.elapsedTime * 0.005;
     }
   });
 
@@ -45,30 +46,17 @@ const ParticleField: React.FC = () => {
   );
 }
 
+
 const Background3D: React.FC = () => {
-  // Only render 3D background on larger screens
-  const [isMobile, setIsMobile] = React.useState(false);
-  
-  React.useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-  
-  if (isMobile) {
-    return null;
-  }
-  
   return (
     <>
-      <div className="fixed inset-0 -z-20">
+      <div className="fixed inset-0 -z-20 pointer-events-none">
         <Canvas
           camera={{ position: [0, 0, 5], fov: 75 }}
           style={{ background: '#000000' }}
+          gl={{ antialias: false, alpha: false }}
+          dpr={[1, 2]}
+          performance={{ min: 0.5 }}
         >
         <Suspense fallback={null}>
           <ambientLight intensity={0.1} />
@@ -85,14 +73,6 @@ const Background3D: React.FC = () => {
             speed={1}
           />
           
-          <OrbitControls
-            enableZoom={false}
-            enablePan={false}
-            autoRotate
-            autoRotateSpeed={0.3}
-            maxPolarAngle={Math.PI / 2}
-            minPolarAngle={Math.PI / 2}
-          />
         </Suspense>
       </Canvas>
     </div>
