@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
+import Head from "next/head";
 import Image from "next/image";
 
 import ProjectsBtn from "../components/ProjectsBtn";
@@ -9,7 +10,21 @@ import { fadeIn } from "../variants";
 
 const Home: NextPage = () => {
   return (
-    <div className="min-h-screen flex items-center relative z-10">
+    <>
+      <Head>
+        <title>Gladson Sam | Full Stack Developer & Engineering Student Portfolio</title>
+        <meta name="description" content="Welcome to Gladson Sam's portfolio. Aspiring full stack developer and Mechatronic Engineering Honours & Computer Science student passionate about robotics, automation, and modern web development." />
+        <meta name="keywords" content="gladson sam, full stack developer, mechatronic engineering, computer science, portfolio, web developer, student, perth, react, nextjs, typescript, robotics" />
+        <meta property="og:title" content="Gladson Sam | Full Stack Developer & Engineering Student" />
+        <meta property="og:description" content="Aspiring full stack developer and engineering student passionate about robotics and modern web development." />
+        <meta property="og:url" content="https://gladsonsam.com" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:title" content="Gladson Sam | Full Stack Developer & Engineering Student" />
+        <meta name="twitter:description" content="Aspiring full stack developer and engineering student passionate about robotics and modern web development." />
+        <link rel="canonical" href="https://gladsonsam.com" />
+      </Head>
+      
+      <div className="min-h-screen flex items-center relative z-10">
       {/* Mobile Layout */}
       <div className="lg:hidden w-full px-4 sm:px-6">
         <div className="flex flex-col items-center justify-center min-h-screen py-24">
@@ -64,8 +79,8 @@ const Home: NextPage = () => {
               transition={{ duration: 0.3, delay: 0.3 }}
               className="text-center text-white/70 mb-8 px-4 text-sm sm:text-base leading-relaxed"
             >
-              Engineering student passionate about robotics and modern web development. 
-              Building innovative solutions through code.
+              Welcome! I&apos;m an aspiring full stack developer and engineering student 
+              with a passion for robotics and web development.
             </motion.p>
 
             {/* CTA Button */}
@@ -94,8 +109,7 @@ const Home: NextPage = () => {
                 transition={{ duration: 0.3 }}
                 className="h1 text-left text-4xl xl:text-5xl"
               >
-                Aspiring <span className="text-accent">Full Stack Developer</span> <br />
-                & Engineering Student
+                Welcome to my<span className="text-accent"> Portfolio</span>
               </motion.h1>
 
               {/* subtitle */}
@@ -105,7 +119,7 @@ const Home: NextPage = () => {
                 transition={{ duration: 0.3, delay: 0.1 }}
                 className="max-w-lg xl:max-w-xl mb-8 xl:mb-10 text-left text-lg"
               >
-                Crafting innovative solutions through code and engineering. Currently building the future with modern web technologies and robotics.
+                I am an aspiring full stack developer and engineering student who loves building things with code. Currently exploring web technologies and robotics.
               </motion.p>
 
               {/* btn */}
@@ -133,7 +147,8 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

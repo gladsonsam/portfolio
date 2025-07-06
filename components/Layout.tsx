@@ -47,6 +47,50 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Gladson Sam | Portfolio" />
         <meta name="twitter:description" content="Aspiring Full Stack Developer and Engineering student passionate about robotics and web development." />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Gladson Sam",
+              "jobTitle": "Full Stack Developer & Engineering Student",
+              "description": "Aspiring Full Stack Developer and Mechatronic Engineering Honours & Computer Science student passionate about robotics, automation, and modern web development.",
+              "url": "https://gladsonsam.com",
+              "sameAs": [
+                "https://github.com/gladsonsa",
+                "https://linkedin.com/in/gladsonsam"
+              ],
+              "alumniOf": {
+                "@type": "EducationalOrganization",
+                "name": "Harrisdale Senior High School"
+              },
+              "studiesAt": {
+                "@type": "EducationalOrganization",
+                "name": "University"
+              },
+              "knowsAbout": [
+                "Full Stack Development",
+                "React",
+                "Next.js",
+                "TypeScript",
+                "Python",
+                "Mechatronic Engineering",
+                "Computer Science",
+                "Robotics",
+                "Automation"
+              ],
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Perth",
+                "addressRegion": "Western Australia",
+                "addressCountry": "Australia"
+              }
+            })
+          }}
+        />
       </Head>
 
       {/* 3D Background */}

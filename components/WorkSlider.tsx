@@ -127,52 +127,108 @@ const WorkSlider: React.FC = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 px-2 sm:px-0">
-        {projects.map((project) => (
-          <div
-            className="relative rounded-lg overflow-hidden flex items-center justify-center group cursor-pointer"
-            key={project.id}
-            onClick={() => openModal(project)}
-          >
-            <div className="flex items-center justify-center relative overflow-hidden group">
-              {/* image */}
-              <Image
-                src={project.mainImage}
-                alt={project.title}
-                width={500}
-                height={300}
-                className="rounded-lg w-full h-[160px] sm:h-[200px] object-cover"
-              />
+      <div className="flex flex-col gap-6 sm:gap-6 px-2 sm:px-0">
+        {/* First row - 2 projects */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-6">
+          {projects.slice(0, 2).map((project) => (
+            <div
+              className="relative rounded-lg overflow-hidden flex items-center justify-center group cursor-pointer"
+              key={project.id}
+              onClick={() => openModal(project)}
+            >
+              <div className="flex items-center justify-center relative overflow-hidden group">
+                {/* image */}
+                <Image
+                  src={project.mainImage}
+                  alt={project.title}
+                  width={500}
+                  height={300}
+                  className="rounded-lg w-full h-[180px] sm:h-[200px] object-cover"
+                />
 
-              {/* overlay gradient */}
-              <div
-                className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"
-                aria-hidden
-              />
+                {/* overlay gradient */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"
+                  aria-hidden
+                />
 
-              {/* title */}
-              <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-4 sm:group-hover:-translate-y-6 transition-all duration-300">
-                <div className="flex items-center gap-x-2 text-xs sm:text-[13px] tracking-[0.2em] text-white">
-                  {/* title part 1 */}
-                  <div className="delay-100">VIEW</div>
-                  {/* title part 2 */}
-                  <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
-                    PROJECT
-                  </div>
-                  {/* icon */}
-                  <div className="text-lg sm:text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200">
-                    <BsArrowRight aria-hidden />
+                {/* title */}
+                <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-4 sm:group-hover:-translate-y-6 transition-all duration-300">
+                  <div className="flex items-center gap-x-2 text-xs sm:text-[13px] tracking-[0.2em] text-white">
+                    {/* title part 1 */}
+                    <div className="delay-100">VIEW</div>
+                    {/* title part 2 */}
+                    <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
+                      PROJECT
+                    </div>
+                    {/* icon */}
+                    <div className="text-lg sm:text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200">
+                      <BsArrowRight aria-hidden />
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Project title overlay */}
-              <div className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-black/50 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-lg">
-                <h3 className="text-white font-medium text-xs sm:text-sm">{project.title}</h3>
+                {/* Project title overlay */}
+                <div className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-black/50 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-lg">
+                  <h3 className="text-white font-medium text-xs sm:text-sm">{project.title}</h3>
+                </div>
               </div>
             </div>
+          ))}
+        </div>
+        
+        {/* Second row - 1 project centered */}
+        {projects.length > 2 && (
+          <div className="flex justify-center">
+            <div className="w-full max-w-md sm:max-w-lg">
+              {projects.slice(2, 3).map((project) => (
+                <div
+                  className="relative rounded-lg overflow-hidden flex items-center justify-center group cursor-pointer"
+                  key={project.id}
+                  onClick={() => openModal(project)}
+                >
+                  <div className="flex items-center justify-center relative overflow-hidden group">
+                    {/* image */}
+                    <Image
+                      src={project.mainImage}
+                      alt={project.title}
+                      width={500}
+                      height={300}
+                      className="rounded-lg w-full h-[180px] sm:h-[200px] object-cover"
+                    />
+
+                    {/* overlay gradient */}
+                    <div
+                      className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"
+                      aria-hidden
+                    />
+
+                    {/* title */}
+                    <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-4 sm:group-hover:-translate-y-6 transition-all duration-300">
+                      <div className="flex items-center gap-x-2 text-xs sm:text-[13px] tracking-[0.2em] text-white">
+                        {/* title part 1 */}
+                        <div className="delay-100">VIEW</div>
+                        {/* title part 2 */}
+                        <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
+                          PROJECT
+                        </div>
+                        {/* icon */}
+                        <div className="text-lg sm:text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200">
+                          <BsArrowRight aria-hidden />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Project title overlay */}
+                    <div className="absolute top-2 sm:top-4 left-2 sm:left-4 bg-black/50 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-lg">
+                      <h3 className="text-white font-medium text-xs sm:text-sm">{project.title}</h3>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
+        )}
       </div>
 
       {/* Modal */}

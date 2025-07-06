@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import CountUp from "react-countup";
 import type { NextPage } from "next";
+import Head from "next/head";
 import type { IconType } from "react-icons";
 import {
   FaGitAlt,
@@ -111,7 +112,19 @@ const About: NextPage = () => {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="min-h-screen bg-primary/30 pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 text-center xl:text-left overflow-y-auto">
+    <>
+      <Head>
+        <title>About - Gladson Sam | Mechatronic Engineering & Computer Science Student</title>
+        <meta name="description" content="Learn about Gladson Sam, a passionate Mechatronic Engineering Honours and Computer Science student from Perth, Western Australia. Discover his skills in robotics, automation, and full-stack web development." />
+        <meta name="keywords" content="gladson sam, about, mechatronic engineering, computer science, robotics, automation, web development, student, perth, western australia, react, typescript, python" />
+        <meta property="og:title" content="About - Gladson Sam | Engineering & Development" />
+        <meta property="og:description" content="Passionate student pursuing double degree in Mechatronic Engineering Honours and Computer Science, focusing on robotics and web development." />
+        <meta property="og:url" content="https://gladsonsam.com/about" />
+        <meta name="twitter:title" content="About - Gladson Sam | Engineering & Development" />
+        <meta name="twitter:description" content="Passionate student pursuing double degree in Mechatronic Engineering Honours and Computer Science, focusing on robotics and web development." />
+      </Head>
+      
+      <div className="min-h-screen bg-primary/30 text-center xl:text-left relative">
       <Circles />
 
       {/* avatar img */}
@@ -125,9 +138,9 @@ const About: NextPage = () => {
         <Avatar />
       </motion.div>
 
-      <div className="container mx-auto min-h-screen flex flex-col items-center xl:flex-row gap-x-6 gap-y-8 px-4 sm:px-6 lg:px-8 xl:px-0">
+      <div className="container mx-auto min-h-screen xl:h-screen flex flex-col items-center xl:flex-row gap-x-6 gap-y-8 xl:gap-y-6 px-4 sm:px-6 lg:px-8 xl:px-0 py-20 sm:py-24 lg:py-28 xl:py-32">
         {/* text */}
-        <div className="flex-1 flex flex-col justify-center w-full xl:w-auto">
+        <div className="flex-1 flex flex-col justify-center w-full xl:w-auto min-h-0">
           <motion.h2
             variants={fadeIn("right", 0.2)}
             initial="hidden"
@@ -142,7 +155,7 @@ const About: NextPage = () => {
             variants={fadeIn("right", 0.4)}
             initial="hidden"
             animate="show"
-            className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 text-sm sm:text-base"
+            className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-8 px-2 xl:px-0 text-sm sm:text-base"
           >
             I am a passionate student pursuing a double degree in Mechatronic Engineering Honours and Computer Science in Perth, Western Australia. My journey combines the precision of engineering with the creativity of software development, focusing on robotics, automation, and full-stack web development.
           </motion.p>
@@ -152,7 +165,7 @@ const About: NextPage = () => {
             variants={fadeIn("right", 0.6)}
             initial="hidden"
             animate="show"
-            className="flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8 gap-x-2 sm:gap-x-4"
+            className="flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8 xl:mb-6 gap-x-2 sm:gap-x-4"
           >
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
               {/* experience */}
@@ -204,9 +217,9 @@ const About: NextPage = () => {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="flex flex-col w-full xl:max-w-[48%] min-h-[400px] max-h-[600px] xl:h-auto"
+          className="flex flex-col w-full xl:max-w-[48%] flex-1 max-h-[50vh] xl:max-h-none min-h-0"
         >
-          <div className="flex gap-x-2 sm:gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4 flex-wrap justify-center xl:justify-start">
+          <div className="flex gap-x-2 sm:gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-3 xl:mb-4 flex-wrap justify-center xl:justify-start">
             {aboutData.map((item, itemI) => (
               <div
                 key={itemI}
@@ -221,11 +234,11 @@ const About: NextPage = () => {
             ))}
           </div>
 
-          <div className="py-2 xl:py-6 flex flex-col gap-y-3 xl:gap-y-4 items-center xl:items-start overflow-y-auto max-h-[400px] xl:max-h-none px-2">
+          <div className="py-3 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start flex-1 overflow-y-auto px-2">
             {aboutData[index].info.map((item, itemI) => (
               <div
                 key={itemI}
-                className="flex flex-col sm:flex-row w-full max-w-full gap-x-2 gap-y-2 items-center sm:items-start text-center sm:text-left text-white/60"
+                className="flex flex-col sm:flex-row w-full max-w-full gap-x-2 gap-y-1 sm:gap-y-2 items-center sm:items-start text-center sm:text-left text-white/60"
               >
                 {/* title */}
                 <div className="font-light text-sm sm:text-base flex-shrink-0">{item.title}</div>
@@ -245,7 +258,8 @@ const About: NextPage = () => {
           </div>
         </motion.div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 
