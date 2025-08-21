@@ -13,7 +13,7 @@ const Work: NextPage = () => {
       <Head>
         <title>Projects & Work - Gladson Sam | Portfolio</title>
         <meta name="description" content="Explore Gladson Sam's portfolio of projects including web development, robotics, and engineering solutions. View his work in React, Next.js, TypeScript, and more." />
-        <meta name="keywords" content="gladson sam, projects, portfolio, web development, react, nextjs, typescript, robotics, engineering, church website, song builder" />
+        <meta name="keywords" content="gladson sam, projects, portfolio, web development, react, nextjs, typescript, robotics, engineering, church website, freeshow remote" />
         <meta property="og:title" content="Projects & Work - Gladson Sam | Portfolio" />
         <meta property="og:description" content="Explore my portfolio of projects including web development, robotics, and engineering solutions." />
         <meta property="og:url" content="https://gladsonsam.com/work" />

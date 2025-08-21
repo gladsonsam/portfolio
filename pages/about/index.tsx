@@ -80,8 +80,8 @@ export const aboutData: AboutDataItem[] = [
     title: "projects",
     info: [
       {
-        title: "Song Building App",
-        stage: "React-based Lyrical Presentation Tool",
+        title: "FreeShow Remote",
+        stage: "React Native Mobile Remote Control",
       },
       {
         title: "Personal Portfolio",

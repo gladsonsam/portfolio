@@ -23,17 +23,18 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "SongBuilder",
-    mainImage: "/work/songbuilder/main.jpg",
+    title: "FreeShow Remote",
+    mainImage: "/work/freeshow-remote/screenshot3.png",
     images: [
-      "/work/songbuilder/main.jpg",
-      "/work/songbuilder/screenshot1.jpg",
-      "/work/songbuilder/screenshot2.jpg",
+      "/work/freeshow-remote/screenshot3.png",
+      "/work/freeshow-remote/screenshot4.png",
+      "/work/freeshow-remote/screenshot5.png",
+      "/work/freeshow-remote/screenshot6.png",
+      "/work/freeshow-remote/screenshot7.png",
     ],
-    description: "A modern React application designed to help create lyrical presentations for songs. Features real-time editing, multiple themes, and export capabilities for church services and presentations.",
-    techStack: ["React", "JavaScript", "CSS", "HTML"],
-    githubUrl: "https://github.com/gladsonsam/SongBuilder",
-    liveUrl: "https://songbuilder.gladsonsam.com",
+    description: "A mobile application that serves as a remote control for FreeShow presentation software. Features auto-discovery of FreeShow instances on your network, quick show switching, and complete remote control functionality for presentations.",
+    techStack: ["React Native", "Expo", "TypeScript", "JavaScript"],
+    githubUrl: "https://github.com/gladsonsam/freeshow-remote",
   },
   {
     id: 2,
@@ -143,7 +144,7 @@ const WorkSlider: React.FC = () => {
                   alt={project.title}
                   width={500}
                   height={300}
-                  className="rounded-lg w-full h-[180px] sm:h-[200px] object-cover"
+                  className="rounded-lg w-full h-[180px] sm:h-[200px] object-contain"
                 />
 
                 {/* overlay gradient */}
@@ -194,7 +195,7 @@ const WorkSlider: React.FC = () => {
                       alt={project.title}
                       width={500}
                       height={300}
-                      className="rounded-lg w-full h-[180px] sm:h-[200px] object-cover"
+                      className="rounded-lg w-full h-[180px] sm:h-[200px] object-contain"
                     />
 
                     {/* overlay gradient */}
@@ -293,7 +294,7 @@ const WorkSlider: React.FC = () => {
                             alt={`${selectedProject.title} - Image ${currentImageIndex + 1}`}
                             width={600}
                             height={300}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-contain"
                           />
                         </motion.div>
                       </AnimatePresence>
@@ -364,7 +365,7 @@ const WorkSlider: React.FC = () => {
                             alt={`${selectedProject.title} thumbnail ${index + 1}`}
                             width={80}
                             height={60}
-                            className="w-16 h-12 sm:w-20 sm:h-15 object-cover"
+                            className="w-16 h-12 sm:w-20 sm:h-15 object-contain"
                           />
                         </motion.button>
                       ))}
