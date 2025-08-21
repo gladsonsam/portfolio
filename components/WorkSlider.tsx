@@ -42,8 +42,6 @@ const projects: Project[] = [
     mainImage: "/work/church-website/main.jpg",
     images: [
       "/work/church-website/main.jpg",
-      "/work/church-website/screenshot1.jpg",
-      "/work/church-website/screenshot2.jpg",
     ],
     description: "A comprehensive church website featuring service information, events calendar, online giving, and community features. Built with modern web technologies to serve the congregation effectively.",
     techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
@@ -54,8 +52,6 @@ const projects: Project[] = [
     mainImage: "/work/portfolio/main.jpg",
     images: [
       "/work/portfolio/main.jpg",
-      "/work/portfolio/screenshot1.jpg",
-      "/work/portfolio/screenshot2.jpg",
     ],
     description: "A modern, responsive portfolio website showcasing my projects, skills, and experience. Features 3D animations, smooth transitions, and a clean, professional design.",
     techStack: ["Next.js", "TypeScript", "React", "Tailwind CSS", "Framer Motion", "React Three Fiber"],
